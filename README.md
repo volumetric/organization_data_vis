@@ -1,5 +1,5 @@
-organization_data_vis
-=====================
+Organization Data Visualization
+===============================
 
 Visualizing the data about companies and organization in Big Data and Analytics.
 
