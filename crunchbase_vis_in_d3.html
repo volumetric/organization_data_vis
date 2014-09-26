@@ -1,0 +1,88 @@
+<html>
+<head>
+</head>
+
+<body>
+<script type="text/underscore" id="gia-sotu-presidentTemplate">
+	<h3>
+		<span><%= ranking %>.</span>
+		<%= president.name %>
+	</h3>
+	<div class="gia-sotu-presidentImage">
+		<%= helpers.portraitTag(president.name) %>
+	</div>
+	<div class="gia-sotu-note-text">Avg. reading level</div>
+	<div class="gia-sotu-president-kincaid"><%= president.avg_kincaid %></div>
+	<div class="gia-sotu-speech-years"></div>
+	<br clear="left">
+	<div class="gia-sotu-avg-sentence">
+		<div class="gia-sotu-note-text">Average sentence</div>
+		<p>
+			<i class="gia-sotu-quote-left"></i>
+			<%= president.avg_sentence.text %>.
+			<i class="gia-sotu-quote-right"></i>
+		</p>
+	</div>
+</script>
+
+<!-- <script type="text/underscore" id="gia-sotu-popupTemplate">
+	<div id="gia-sotu-popup-portrait">
+		<%= helpers.portraitTag(speech.president.name) %>
+	</div>
+	<h3><%= speech.president.name %></h3>
+	<div class="gia-sotu-popup-date">
+		<%= helpers.formatDate(speech.date) %>
+		-
+		<%= helpers.addCommas(speech.wc) %> words
+	</div>
+	<div class="gia-sotu-popup-kincaid">
+		<%= helpers.formatKincaid(speech.kincaid) %>
+		<div class="gia-sotu-popup-kincaid-text">
+		Average education level
+		</div>
+	</div>
+</script> -->
+
+<script type="text/underscore" id="gia-sotu-popupTemplate">
+	<div id="gia-sotu-popup-portrait">
+		<%= '<img src="' + speech.rel.primary_image + '" alt="' + speech.name + '">' %>
+	</div>
+	<h3><%= speech.name %></h3>
+	<div class="gia-sotu-popup-date">
+		Founded: <b><%= helpers.formatDate(speech.founded_on) %></b>
+	</div>
+	<div>
+		Number of Employees: <b><%= helpers.addCommas(speech.number_of_employees) %></b>
+	</div>
+
+	<div>
+		Short Description: <b><%= speech.short_description %></b>
+	</div>
+
+	<div>
+		Full Description: <%= speech.description %>
+	</div>
+
+	<div class="gia-sotu-popup-kincaid">
+		<%= speech.total_funding_usd ? helpers.formatKincaid(speech.total_funding_usd) : "N/A" %>
+		<div class="gia-sotu-popup-kincaid-text">
+		Total Funding (USD)
+		</div>
+	</div>
+</script>
+
+
+<div id="gia-sotu"></div>
+
+<!-- <link rel="stylesheet" type="text/css" href="//gia.guim.co.uk/2013/02/sotu/css/main.css">
+<script src="http://pasteup.guim.co.uk/js/lib/jquery/1.8.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.0.1/d3.v3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script> -->
+
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="jquery.min.js"></script>
+<script src="d3.v3.min.js"></script>
+<script src="underscore-min.js"></script>
+<script src="crunchbase_vis_in_d3.js"></script>
+
+</body>
